@@ -1,4 +1,4 @@
-name: Test Colima Runner
+name: Test ephemeral Runner
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  run-on-colima:
+  run-on-ephemeral:
     runs-on: [self-hosted, devops-runner]   # <-- make sure this matches your runner label
     steps:
       - name: Checkout code
