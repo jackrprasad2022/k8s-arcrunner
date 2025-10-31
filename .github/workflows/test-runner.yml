@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-on-colima:
-    runs-on: [self-hosted, devops-runner]   # <-- make sure this matches your runner label
+    runs-on: [self-hosted, colima]   # <-- make sure this matches your runner label
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
