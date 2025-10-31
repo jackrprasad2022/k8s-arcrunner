@@ -1,0 +1,26 @@
+name: Test Colima Runner
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-on-colima:
+    runs-on: [self-hosted, devops-runner]   # <-- make sure this matches your runner label
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "✅ Hello from Colima Kubernetes runner!"
+
+      - name: Show system info
+        run: |
+          echo "🏃 Runner is running on:"
+          uname -a
+          echo "Current directory:"
+          pwd
+          echo "List files:"
+          ls -la
