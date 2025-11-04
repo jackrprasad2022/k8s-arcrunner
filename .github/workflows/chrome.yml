@@ -1,0 +1,11 @@
+jobs:
+  test-chrome:
+    runs-on: [self-hosted, chrome]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Chrome
+        run: |
+          google-chrome --version
+          chromedriver --version
+      - name: Run headless test
+        run: google-chrome --headless --no-sandbox --dump-dom https://example.com | head -n 20
